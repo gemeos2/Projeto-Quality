@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quality — Empório, Padaria e Cafeteria em Itanhaém</title>
+    <meta name="description"
+        content="Quality: o sabor do empório tradicional no coração de Itanhaém. Cafés especiais, pães artesanais, vinhos, queijos e bolos zero lactose e zero glúten." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="icon" href="assets/img/logo.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Inter:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+
+    <script src="templates/balkan-cuisine-80.aura.build/assets/851bed7af266f96a_iconify-icon.min.js" defer></script>
+    <script src="templates/nereo-luxury.aura.build/assets/efc85c7eb1418197_gsap.min.js" defer></script>
+    <script src="templates/nereo-luxury.aura.build/assets/65f6c13748b0c8d8_ScrollTrigger.min.js" defer></script>
+    <script src="templates/nereo-luxury.aura.build/assets/0ef869066c4bbe61_lenis.min.js" defer></script>
+    <script>document.documentElement.classList.add('js', 'preloading')</script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader" role="status" aria-label="Carregando">
+        <!-- logo redesenhada em SVG: cada traço tem um atraso (--d) e é desenhado em sequência -->
+        <svg class="pm" viewBox="240 90 600 896" aria-hidden="true">
+            <rect style="--d:0s;--t:1.3s" pathLength="1" x="262" y="111" width="556" height="855" rx="185" />
+            <path style="--d:.35s" pathLength="1" d="M282 232C325 370 425 440 540 440C655 440 755 370 798 232" />
+            <path style="--d:.6s;--t:.5s" pathLength="1" d="M298 302H782" />
+            <path style="--d:.7s" pathLength="1" d="M362 135C366 250 385 330 428 405" />
+            <path style="--d:.75s" pathLength="1" d="M445 120V410" />
+            <path style="--d:.8s;--t:.4s" pathLength="1" d="M540 122V262" />
+            <path style="--d:.75s" pathLength="1" d="M635 120V410" />
+            <path style="--d:.7s" pathLength="1" d="M718 135C714 250 695 330 652 405" />
+            <circle style="--d:1s" pathLength="1" cx="540" cy="368" r="33" transform="rotate(-90 540 368)" />
+            <rect style="--d:1.1s;--t:.5s" pathLength="1" x="500" y="495" width="78" height="40" rx="6" />
+            <path style="--d:1.2s;--t:1s" pathLength="1" d="M434 955V792Q434 745 481 745H511V578H569V745H599Q646 745 646 792V955" />
+            <g>
+                <path style="--d:1.4s" pathLength="1" d="M266 772Q370 800 434 848" />
+                <path style="--d:1.5s" pathLength="1" d="M268 830Q370 860 434 940" />
+                <path style="--d:1.45s" pathLength="1" d="M352 785Q372 660 425 578" />
+                <path style="--d:1.85s;--t:.35s" pathLength="1" d="M355 578Q375 600 400 610" />
+                <path style="--d:1.65s;--t:.35s" pathLength="1" d="M382 662Q340 665 325 640" />
+                <path style="--d:1.55s;--t:.35s" pathLength="1" d="M364 740Q320 740 304 712" />
+                <path style="--d:1.75s;--t:.35s" pathLength="1" d="M400 624Q425 632 455 625" />
+                <path style="--d:1.65s;--t:.35s" pathLength="1" d="M382 686Q410 692 440 682" />
+                <path style="--d:1.55s;--t:.35s" pathLength="1" d="M366 750Q390 755 415 745" />
+            </g>
+            <g transform="matrix(-1 0 0 1 1080 0)">
+                <path style="--d:1.4s" pathLength="1" d="M266 772Q370 800 434 848" />
+                <path style="--d:1.5s" pathLength="1" d="M268 830Q370 860 434 940" />
+                <path style="--d:1.45s" pathLength="1" d="M352 785Q372 660 425 578" />
+                <path style="--d:1.85s;--t:.35s" pathLength="1" d="M355 578Q375 600 400 610" />
+                <path style="--d:1.65s;--t:.35s" pathLength="1" d="M382 662Q340 665 325 640" />
+                <path style="--d:1.55s;--t:.35s" pathLength="1" d="M364 740Q320 740 304 712" />
+                <path style="--d:1.75s;--t:.35s" pathLength="1" d="M400 624Q425 632 455 625" />
+                <path style="--d:1.65s;--t:.35s" pathLength="1" d="M382 686Q410 692 440 682" />
+                <path style="--d:1.55s;--t:.35s" pathLength="1" d="M366 750Q390 755 415 745" />
+            </g>
+        </svg>
+        <span class="pre-name">Quality</span>
+        <div class="pre-bar"><i id="pre-fill"></i></div>
+    </div>
+    <div id="progress"></div>
+
+    <!-- NAVBAR -->
+    <header id="navbar">
+        <div class="container nav-inner">
+            <a href="#hero" class="logo" aria-label="Quality — início">
+                <span class="logo-mark"><img src="assets/img/logo.jpg" alt="" /></span>
+                <span><b>Quality</b><small>Empório · Padaria · Café</small></span>
+            </a>
+            <nav class="nav-links" aria-label="Principal">
+                <a class="side-link active" href="#hero">Início</a>
+                <a class="side-link" href="#cardapio">Cardápio</a>
+                <a class="side-link" href="#sobre">Sobre</a>
+                <a class="side-link" href="#cardapio" data-tab="saudavel">Sem Glúten &amp; Lactose</a>
+                <a class="side-link" href="#localizacao">Localização</a>
+            </nav>
+            <div class="nav-right">
+                <button id="cart-fab" class="nav-cart" aria-label="Abrir pedido"><iconify-icon icon="solar:cart-large-2-bold"></iconify-icon><span class="nav-cart-label">Pedido</span><span id="cart-count" class="cart-count">0</span></button>
+                <button class="menu-btn" id="open-menu" aria-label="Abrir menu"><iconify-icon
+                        icon="solar:hamburger-menu-linear"></iconify-icon></button>
+            </div>
+        </div>
+    </header>
+    <div id="drawer-overlay"></div>
+    <div id="drawer" aria-hidden="true">
+        <button class="menu-btn close" id="close-menu" aria-label="Fechar menu"><iconify-icon
+                icon="solar:close-circle-linear"></iconify-icon></button>
+        <nav><a href="#hero">Início</a><a href="#cardapio">Cardápio</a><a href="#sobre">Sobre</a><a
+                href="#cardapio" data-tab="saudavel">Sem Glúten &amp; Lactose</a><a href="#localizacao">Localização</a></nav>
+        <div class="drawer-foot">
+            <p>Encomendas &amp; informações</p>
+            <a href="https://wa.me/5513997744613" target="_blank" rel="noopener" class="btn btn-fire">Chamar no
+                WhatsApp</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- ============ HERO ============ -->
+        <section id="hero" class="hero">
+            <div class="ambient-glow g1"></div>
+            <div class="ambient-glow g2"></div>
+            <div data-embers="8" style="position:absolute;inset:0;z-index:1;pointer-events:none"></div>
+            <div class="hero-shade"></div>
+            <div class="grain"></div>
+
+            <!-- Mídia de fundo em tela cheia: assets/img/bg_Hero.jpg. Se o arquivo faltar, aparece o emblema da marca. -->
+            <div class="hero-media no-photo" id="hero-media">
+                <img class="hero-emblem" src="assets/img/logo.jpg" alt="" />
+                <img class="photo" src="assets/img/bg_Hero.jpg"
+                    alt="Vitrine da Quality com bolos, doces e biscoitos artesanais" fetchpriority="high" />
+                <div class="hero-fade"></div>
+                <div class="hero-vignette"></div>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="text-mask" id="hero-heading">
+                        <h1>
+                            <span class="l1">Café, pão fresco e o bolo</span>
+                            <span class="l2">que você achava que não podia comer.</span>
+                        </h1>
+                    </div>
+                    <p class="hero-sub" id="hero-sub">Cafeteria <b>•</b> Empório <b>•</b> Padaria em Itanhaém</p>
+                    <div class="seal-pill" id="hero-seal"><iconify-icon
+                            icon="solar:leaf-bold"></iconify-icon><span>Bolos sem lactose e sem glúten</span></div>
+                    <div class="hero-ctas" id="hero-ctas">
+                        <a href="https://wa.me/5513997744613?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20encomenda."
+                            target="_blank" rel="noopener" class="btn btn-fire"><iconify-icon
+                                icon="ic:baseline-whatsapp"></iconify-icon> Fazer encomenda</a>
+                        <a href="#localizacao" class="btn btn-glass"><iconify-icon
+                                icon="solar:map-point-linear"></iconify-icon> Como chegar</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#cardapio" class="scroll-hint" aria-label="Rolar para a próxima seção"><span>Role para
+                    descobrir</span><i></i></a>
+        </section>
+
+        <!-- ============ CARDÁPIO ============ -->
+        <section id="cardapio" class="section menu">
+            <div class="menu-dots"></div>
+            <div class="container">
+                <div class="sec-head reveal">
+                    <span class="sec-kicker">O Cardápio</span>
+                    <h2>Nossos <em>Produtos</em></h2>
+                    <p>Do primeiro café da manhã à cesta do empório: ingredientes de qualidade e o cuidado de quem
+                        conhece o cliente pelo nome.</p>
+                </div>
+
+                <div class="menu-tabs reveal" role="tablist" aria-label="Categorias do cardápio">
+                    <button class="menu-tab active" role="tab" id="t-cafes" aria-controls="p-cafes"
+                        aria-selected="true"><iconify-icon icon="solar:cup-hot-linear"></iconify-icon><span class="tab-long">Cafés e Bebidas</span><span class="tab-short">Cafés</span></button>
+                    <button class="menu-tab" role="tab" id="t-padaria" aria-controls="p-padaria" aria-selected="false"
+                        tabindex="-1"><iconify-icon icon="solar:chef-hat-linear"></iconify-icon><span class="tab-long">Fornada do Dia</span><span class="tab-short">Fornada</span></button>
+                    <button class="menu-tab" role="tab" id="t-saudavel" aria-controls="p-saudavel" aria-selected="false"
+                        tabindex="-1"><iconify-icon icon="solar:leaf-linear"></iconify-icon><span class="tab-long">Saudável &amp; Inclusiva</span><span class="tab-short">Saudável</span></button>
+                    <button class="menu-tab" role="tab" id="t-emporio" aria-controls="p-emporio" aria-selected="false"
+                        tabindex="-1"><iconify-icon icon="solar:shop-2-linear"></iconify-icon><span class="tab-long">Seleção do Empório</span><span class="tab-short">Empório</span></button>
+                </div>
+
+                <div class="menu-panels reveal">
+                    <!-- Cafés e Bebidas -->
+                    <div class="menu-panel" role="tabpanel" id="p-cafes" aria-labelledby="t-cafes">
+                        <div class="menu-grid">
+                            <article class="mi" data-price="6">
+                                <h3>Espresso</h3>
+                                <p>Curto, encorpado e de crema persistente, extraído na hora.</p>
+                            </article>
+                            <article class="mi mi-feat" data-price="12" data-flavors="Tradicional|Canela|Chocolate"><span class="mi-tag">Queridinho</span>
+                                <h3>Cappuccino</h3>
+                                <p>Espresso, leite vaporizado e espuma sedosa.</p>
+                            </article>
+                            <article class="mi" data-price="5">
+                                <h3>Café Coado</h3>
+                                <p>Grãos selecionados, coado no ponto para acompanhar o pão quentinho.</p>
+                            </article>
+                            <article class="mi" data-flavors="Preto|Verde|Camomila|Frutas vermelhas" data-price="8">
+                                <h3>Chás Selecionados</h3>
+                                <p>Folhas e ervas em infusão: preto, verde, camomila e frutas vermelhas.</p>
+                            </article>
+                            <article class="mi" data-price="11" data-flavors="Laranja|Limão|Maracujá|Abacaxi com hortelã|Morango">
+                                <h3>Sucos Naturais</h3>
+                                <p>Frutas frescas espremidas na hora, sem adição de açúcar.</p>
+                            </article>
+                            <article class="mi" data-price="14">
+                                <h3>Chocolate Quente</h3>
+                                <p>Cremoso e de verdade, perfeito para os dias frescos do litoral.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Fornada do Dia (Padaria) -->
+                    <div class="menu-panel" role="tabpanel" id="p-padaria" aria-labelledby="t-padaria" hidden>
+                        <div class="menu-grid">
+                            <article class="mi mi-feat" data-price="28"><span class="mi-tag">Fornada do dia</span>
+                                <h3>Pão de Fermentação Natural</h3>
+                                <p>Massa madre, longa maturação e casca crocante.</p>
+                            </article>
+                            <article class="mi" data-price="12">
+                                <h3>Baguete Tradicional</h3>
+                                <p>Casca dourada e miolo aerado, ideal com queijo e azeite.</p>
+                            </article>
+                            <article class="mi" data-price="22">
+                                <h3>Pão de Forma Artesanal</h3>
+                                <p>Macio, sem conservantes, fatiado na hora.</p>
+                            </article>
+                            <article class="mi" data-price="10">
+                                <h3>Folhado de Queijo</h3>
+                                <p>Massa leve e amanteigada, assada até dourar.</p>
+                            </article>
+                            <article class="mi" data-flavors="Esfiha|Empada|Enroladinho" data-price="9">
+                                <h3>Salgados Assados</h3>
+                                <p>Esfihas, empadas e enroladinhos assados, nunca fritos.</p>
+                            </article>
+                            <article class="mi" data-price="7">
+                                <h3>Pão de Queijo</h3>
+                                <p>Crocante por fora, macio por dentro, servido quente.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Linha Saudável & Inclusiva -->
+                    <div class="menu-panel" role="tabpanel" id="p-saudavel" aria-labelledby="t-saudavel" hidden>
+                        <p class="panel-note"><iconify-icon icon="solar:shield-check-linear"></iconify-icon> Todos os
+                            bolos desta linha são sem glúten e sem lactose, com os ingredientes à vista para você
+                            escolher com segurança.</p>
+                        <div class="menu-grid">
+                            <article class="mi mi-feat" data-price="16"><span class="mi-tag">Sem glúten · Sem lactose</span>
+                                <h3>Bolo de Cenoura</h3>
+                                <p>Cobertura de chocolate vegetal.</p>
+                                <ul class="chips" aria-label="Ingredientes">
+                                    <li>Cenoura</li>
+                                    <li>Óleo de coco</li>
+                                    <li>Farinha de arroz</li>
+                                    <li>Açúcar demerara</li>
+                                    <li>Cacau</li>
+                                </ul>
+                            </article>
+                            <article class="mi" data-price="16"><span class="mi-tag">Sem glúten · Sem lactose</span>
+                                <h3>Bolo de Laranja</h3>
+                                <p>Aroma cítrico e miolo úmido.</p>
+                                <ul class="chips" aria-label="Ingredientes">
+                                    <li>Laranja</li>
+                                    <li>Farinha de arroz</li>
+                                    <li>Amido de milho</li>
+                                    <li>Óleo de coco</li>
+                                    <li>Ovos</li>
+                                </ul>
+                            </article>
+                            <article class="mi" data-price="16"><span class="mi-tag">Sem glúten · Sem lactose</span>
+                                <h3>Bolo de Fubá com Goiabada</h3>
+                                <p>Receita caseira de café da tarde.</p>
+                                <ul class="chips" aria-label="Ingredientes">
+                                    <li>Fubá</li>
+                                    <li>Goiabada</li>
+                                    <li>Óleo de coco</li>
+                                    <li>Ovos</li>
+                                </ul>
+                            </article>
+                            <article class="mi" data-price="18"><span class="mi-tag">Sem glúten · Sem lactose</span>
+                                <h3>Bolo de Chocolate</h3>
+                                <p>Intenso, feito com cacau de verdade.</p>
+                                <ul class="chips" aria-label="Ingredientes">
+                                    <li>Cacau</li>
+                                    <li>Farinha de arroz</li>
+                                    <li>Açúcar demerara</li>
+                                    <li>Leite vegetal</li>
+                                </ul>
+                            </article>
+                            <article class="mi" data-price="16"><span class="mi-tag">Sem glúten · Sem lactose</span>
+                                <h3>Bolo de Banana com Aveia</h3>
+                                <p>Úmido e naturalmente adocicado.</p>
+                                <ul class="chips" aria-label="Ingredientes">
+                                    <li>Banana</li>
+                                    <li>Aveia sem glúten</li>
+                                    <li>Canela</li>
+                                    <li>Ovos</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Seleção do Empório -->
+                    <div class="menu-panel" role="tabpanel" id="p-emporio" aria-labelledby="t-emporio" hidden>
+                        <p class="panel-note"><iconify-icon icon="solar:map-point-linear"></iconify-icon> Valorizamos os
+                            produtores locais do litoral: pergunte pela origem de cada item.</p>
+                        <div class="menu-grid">
+                            <article class="mi" data-price="24" data-flavors="Morango|Goiaba|Frutas vermelhas|Laranja"><span class="mi-tag">Produtor local</span>
+                                <h3>Geleias Artesanais</h3>
+                                <p>Frutas da estação em pequenos lotes, com pouco açúcar.</p>
+                            </article>
+                            <article class="mi mi-feat" data-price="38" data-flavors="Parmesão|Gruyère|Provolone|Gouda"><span class="mi-tag">Seleção da casa</span>
+                                <h3>Queijos Curados</h3>
+                                <p>Queijos curados selecionados, fatiados na hora.</p>
+                            </article>
+                            <article class="mi" data-price="49" data-flavors="Tradicional|Aromatizado com alho|Aromatizado com ervas">
+                                <h3>Azeites Extravirgem</h3>
+                                <p>Prensados a frio, de produtores selecionados.</p>
+                            </article>
+                            <article class="mi" data-price="79" data-flavors="Tinto|Branco|Rosé">
+                                <h3>Vinhos</h3>
+                                <p>Rótulos escolhidos para harmonizar com queijos e frios do empório.</p>
+                            </article>
+                            <article class="mi" data-price="32" data-flavors="Silvestre|Laranjeira|Eucalipto|Favo"><span class="mi-tag">Produtor local</span>
+                                <h3>Mel e Derivados</h3>
+                                <p>Mel puro e favos de apicultores da região.</p>
+                            </article>
+                            <article class="mi" data-price="18"><span class="mi-tag">Produtor local</span>
+                                <h3>Artesanais do Litoral</h3>
+                                <p>Doces, conservas e biscoitos de pequenos produtores do litoral.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-foot reveal">
+                    <a href="https://wa.me/5513997744613?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20card%C3%A1pio."
+                        target="_blank" rel="noopener" class="btn btn-fire"><iconify-icon
+                            icon="ic:baseline-whatsapp"></iconify-icon> Consultar valores e encomendas</a>
+                    <p>Disponibilidade conforme a fornada do dia. Em caso de alergia ou restrição alimentar, fale com a
+                        nossa equipe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SOBRE ============ -->
+        <section id="sobre" class="section about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2 class="reveal">Sabor feito com <em>cuidado</em>, <br />do jeito de Itanhaém.</h2>
+                    <p class="about-lead reveal">A Quality nasceu do desejo de ter, em Itanhaém, um cantinho onde o café é bom de verdade, o pão sai quentinho e ninguém precisa ficar de fora da mesa.</p>
+
+                    <p class="about-body reveal">Começamos pequenos, com uma ideia simples: reunir num só lugar a padaria de bairro, a cafeteria acolhedora e a seleção de um bom empório. Itanhaém é a nossa casa, e queremos ser a parada certa tanto para quem mora aqui quanto para quem desce a serra. Escolhemos cada ingrediente a dedo, com produtores do litoral, e unimos a tradição do pão fresco, a exclusividade do empório e o cuidado de uma confeitaria inclusiva, com bolos sem glúten e sem lactose feitos com o mesmo sabor e a mesma atenção, para que toda a família sente junto à mesa.</p>
+
+                    <a href="#localizacao" class="btn btn-fire reveal">Venha nos visitar</a>
+                </div>
+
+                <div class="about-media reveal">
+                    <div class="about-photo">
+                        <img src="assets/img/sobreNos.jpg" alt="Salão acolhedor da Quality, com mesa posta e paredes de tijolinho" loading="lazy" />
+                    </div>
+                    <a href="#cardapio" class="about-badge" aria-label="Ver o cardápio">
+                        <svg viewBox="0 0 120 120" aria-hidden="true">
+                            <defs><path id="badge-circle" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0" /></defs>
+                            <text><textPath href="#badge-circle" startOffset="0">Quality • Empório • Padaria • Café •</textPath></text>
+                        </svg>
+                        <span class="about-badge-arrow"><iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ LOCALIZAÇÃO ============ -->
+        <section id="localizacao" class="section location">
+            <div class="container">
+                <div class="sec-head reveal">
+                    <span class="sec-kicker">Localização</span>
+                    <h2>Venha nos <em>visitar</em></h2>
+                    <p>Estamos no centro de Itanhaém. Passe para um café, leve o pão quentinho ou escolha o seu bolo.</p>
+                </div>
+                <div class="location-grid reveal">
+                    <div class="location-map">
+                        <iframe title="Mapa da Quality em Itanhaém" src="https://www.google.com/maps?q=Av.%20Rui%20Barbosa%2C%20308%20-%20Centro%2C%20Itanha%C3%A9m%20-%20SP%2C%2011740-000&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+                    <div class="location-info">
+                        <div class="loc-item"><iconify-icon icon="solar:map-point-linear"></iconify-icon>
+                            <div><h3>Endereço</h3><p>Av. Rui Barbosa, 308 — Centro<br />Itanhaém — SP, 11740-000</p></div></div>
+                        <div class="loc-item"><iconify-icon icon="solar:clock-circle-linear"></iconify-icon>
+                            <div><h3>Horário</h3><p>Terça a Domingo<br />08h às 20h</p></div></div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Rui%20Barbosa%2C%20308%20-%20Centro%2C%20Itanha%C3%A9m%20-%20SP%2C%2011740-000" target="_blank" rel="noopener" class="btn btn-fire"><iconify-icon icon="solar:map-point-linear"></iconify-icon> Como chegar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FECHAMENTO ============ -->
+        <section id="pedido" class="section closing">
+            <img class="closing-cake c1" src="assets/img/cake.webp" alt="" width="520" height="520" loading="lazy" aria-hidden="true" />
+            <img class="closing-cake c2" src="assets/img/pie.webp" alt="" width="520" height="520" loading="lazy" aria-hidden="true" />
+            <div class="container closing-inner reveal">
+                <h2>Deu vontade? <em>Faça seu pedido agora.</em></h2>
+                <p>Navegue pelo nosso cardápio, adicione os itens ao carrinho e envie seu pedido diretamente pelo WhatsApp. Simples e rápido.</p>
+                <a href="#cardapio" class="btn btn-fire">Abrir Cardápio</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ RODAPÉ ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-card">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#hero" class="logo" aria-label="Quality — início">
+                            <span class="logo-mark"><img src="assets/img/logo.jpg" alt="" /></span>
+                            <span><b>Quality</b><small>Empório · Padaria · Café</small></span>
+                        </a>
+                        <p>Cafeteria, empório e padaria. Referência em confeitaria sem glúten e sem lactose em Itanhaém.</p>
+                    </div>
+                    <nav class="footer-col" aria-label="Menu do rodapé">
+                        <h3>Menu</h3>
+                        <ul>
+                            <li><a href="#hero">Início</a></li>
+                            <li><a href="#cardapio">Cardápio</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#cardapio" data-tab="saudavel">Sem Glúten &amp; Lactose</a></li>
+                            <li><a href="#localizacao">Localização</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer-col">
+                        <h3>Contato e Redes</h3>
+                        <ul class="social-row">
+                            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><iconify-icon icon="mdi:instagram"></iconify-icon></a></li>
+                            <li><a href="https://wa.me/5513997744613?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20os%20produtos." target="_blank" rel="noopener" aria-label="WhatsApp"><iconify-icon icon="ic:baseline-whatsapp"></iconify-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Quality. Todos os direitos reservados.</p>
+                    <a href="#hero">Voltar ao topo <iconify-icon icon="solar:arrow-up-linear"></iconify-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-mark" aria-hidden="true">Quality</div>
+    </footer>
+
+    <!-- CARRINHO -->
+    <a class="wa-float" href="https://wa.me/5513997744613?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><iconify-icon icon="ic:baseline-whatsapp"></iconify-icon></a>
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <aside id="cart" class="cart" aria-hidden="true" aria-label="Seu pedido">
+        <div class="cart-head">
+            <h2>Seu pedido</h2>
+            <button class="menu-btn" id="cart-close" aria-label="Fechar pedido"><iconify-icon
+                    icon="solar:close-circle-linear"></iconify-icon></button>
+        </div>
+        <ul id="cart-list" class="cart-list" data-lenis-prevent></ul>
+        <p id="cart-empty" class="cart-empty">Seu pedido está vazio. Toque no <b>+</b> dos produtos para adicionar.</p>
+        <div class="cart-foot">
+            <p class="cart-total"><span>Total</span><b id="cart-total">R$ 0,00</b></p>
+            <label for="cart-name">Seu nome</label>
+            <input id="cart-name" type="text" placeholder="Como podemos te chamar?" autocomplete="name" />
+            <a id="cart-send" class="btn btn-fire" href="#" target="_blank" rel="noopener"><iconify-icon
+                    icon="ic:baseline-whatsapp"></iconify-icon> Enviar pedido</a>
+            <button id="cart-clear" class="cart-clear" type="button">Limpar pedido</button>
+        </div>
+    </aside>
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
