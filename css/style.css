@@ -349,15 +349,22 @@ h1 .l2{font-style:normal;padding-right:0;background:none;-webkit-background-clip
 .about h2 em{font-style:normal;color:rgb(var(--gold))}
 .about-lead{margin-top:1.5rem;max-width:36rem;font-size:1.05rem;color:rgb(var(--creamDim))}
 .about-body{margin:1.25rem 0 2.25rem;max-width:36rem;color:rgb(var(--creamDim))}
-.about-media{position:relative;padding-bottom:2.5rem}
-.about-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;border:1px solid rgba(191,122,36,.3);box-shadow:0 30px 80px -30px rgba(0,0,0,.9)}
+/* selo: --bx = deslocamento à esquerda, --bs = tamanho, --gap = folga do recorte na foto */
+.about-media{position:relative;padding-bottom:2.5rem;--bx:-1rem;--bs:8.5rem;--gap:.8rem}
+/* recorte com pontas arredondadas: caixa SVG de 16rem no canto inferior esquerdo + o resto da foto.
+   Os paths foram calculados para --bx/--bs/--gap acima (unidade = .1rem); se mudar esses valores, recalcular. */
+.about-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;border:1px solid rgba(191,122,36,.3);box-shadow:0 30px 80px -30px rgba(0,0,0,.9);
+  --cut:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cpath d='M0 0L0 80.71A14 14 0 0 0 18.02 94.12A50.5 50.5 0 0 1 82.93 145.24A14 14 0 0 0 96.9 160L160 160L160 0Z'/%3E%3C/svg%3E");
+  -webkit-mask:var(--cut) left bottom/16rem 16rem no-repeat,linear-gradient(#000 0 0) top/100% calc(100% - 16rem) no-repeat,linear-gradient(#000 0 0) right/calc(100% - 16rem) 100% no-repeat;
+  mask:var(--cut) left bottom/16rem 16rem no-repeat,linear-gradient(#000 0 0) top/100% calc(100% - 16rem) no-repeat,linear-gradient(#000 0 0) right/calc(100% - 16rem) 100% no-repeat}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:saturate(.95)}
-.about-badge{position:absolute;left:-1rem;bottom:0;width:8.5rem;height:8.5rem;border-radius:50%;display:grid;place-items:center;background:rgb(var(--cream));color:rgb(var(--vinho));box-shadow:0 18px 40px -12px rgba(0,0,0,.8);transition:transform .4s var(--ease-luxe)}
+.about-badge{position:absolute;left:var(--bx);bottom:0;width:var(--bs);height:var(--bs);border-radius:50%;display:grid;place-items:center;background:rgb(var(--cream));color:rgb(var(--vinho));transition:transform .4s var(--ease-luxe)}
 .about-badge:hover{transform:scale(1.06)}
 .about-badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
 .about-badge text{font-family:var(--font-label);font-weight:600;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;fill:currentColor}
 .about-badge-arrow{display:grid;place-items:center;width:3.2rem;height:3.2rem;border-radius:50%;background:rgb(var(--gold));color:rgb(var(--ink));font-size:1.5rem}
-@media(min-width:1024px){.about-badge{left:-2.5rem}}
+@media(min-width:1024px){.about-media{--bx:-2.5rem}
+  .about-photo{--cut:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cpath d='M0 0L0 78.1A14 14 0 0 0 14.76 92.07A50.5 50.5 0 0 1 67.93 145.24A14 14 0 0 0 81.9 160L160 160L160 0Z'/%3E%3C/svg%3E")}}
 @media(prefers-reduced-motion:reduce){.about-badge svg{animation:none}}
 
 /* ---------- TEXTO CORRIDO PADRONIZADO EM 16px ---------- */
