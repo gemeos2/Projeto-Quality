@@ -87,7 +87,7 @@
   /* ---------- carrinho (pedido por WhatsApp) ---------- */
   var WA='5513997744613',KEY='quality-cart',cart=[];
   try{cart=JSON.parse(localStorage.getItem(KEY))||[]}catch(e){}
-  var cEl=$('#cart'),cOv=$('#cart-overlay'),cList=$('#cart-list'),cEmpty=$('#cart-empty'),cFab=$('#cart-fab'),cCount=$('#cart-count'),cSend=$('#cart-send'),cName=$('#cart-name'),cTotal=$('#cart-total');
+  var cEl=$('#cart'),cOv=$('#cart-overlay'),cList=$('#cart-list'),cEmpty=$('#cart-empty'),cFab=$('#cart-fab'),cCount=$('#cart-count'),cSend=$('#cart-send'),cName=$('#cart-name'),cAddr=$('#cart-address'),cTotal=$('#cart-total');
   function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function save(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}}
   function total(){return cart.reduce(function(a,i){return a+i.q},0)}
@@ -95,7 +95,8 @@
   function sum(){return cart.reduce(function(a,i){return a+(i.p||0)*i.q},0)}
   function msg(){var l=['Olá! Gostaria de fazer um pedido:',''];cart.forEach(function(i){l.push('• '+i.q+'x '+i.n+(i.p?' — '+brl(i.p*i.q):''))});
     if(sum())l.push('','Total: '+brl(sum()));
-    if(cName.value.trim())l.push('','Nome: '+cName.value.trim());return l.join('\n')}
+    if(cName.value.trim())l.push('','Nome: '+cName.value.trim());
+    if(cAddr.value.trim())l.push((cName.value.trim()?'':'\n')+'Endereço: '+cAddr.value.trim());return l.join('\n')}
   function render(){var n=total();cCount.textContent=n;cEmpty.hidden=n>0;cEl.classList.toggle('has-items',n>0);
     cList.innerHTML=cart.map(function(i,x){return '<li><span class="ci-name">'+esc(i.n)+(i.p?'<small>'+brl(i.p)+'</small>':'')+'</span><span class="ci-qty"><button type="button" data-a="dec" data-i="'+x+'" aria-label="Diminuir">−</button><b>'+i.q+'</b><button type="button" data-a="inc" data-i="'+x+'" aria-label="Aumentar">+</button></span></li>'}).join('');
     cTotal.textContent=brl(sum());cSend.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg());save()}
@@ -127,6 +128,7 @@
   cFab.onclick=function(){openCart(true)};$('#cart-close').onclick=cOv.onclick=function(){openCart(false)};
   $('#cart-clear').onclick=function(){cart=[];openCart(false)};
   cName.addEventListener('input',render);
+  cAddr.addEventListener('input',render);
   cSend.addEventListener('click',function(e){if(!cart.length){e.preventDefault()}});
   addEventListener('keydown',function(e){if(e.key==='Escape'&&cEl.classList.contains('open'))openCart(false)});
   render();
